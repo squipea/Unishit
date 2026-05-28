@@ -1,0 +1,16 @@
+{
+  "mcpServers": {
+    "unity-mcp-gateway": {
+      "command": "C:\\Users\\HP\\OneDrive\\Documents\\Unishit\\UNITY-new-branch-5\\UNITY-new-branch-5\\Library\\PackageCache\\com.unity.ai.assistant@bde8e124bc72\\RelayApp~\\relay_win.exe",
+      "args": [
+        "--mcp",
+        "--log-dir",
+        "C:\\Users\\HP\\OneDrive\\Documents\\Unishit\\UNITY-new-branch-5\\UNITY-new-branch-5\\Logs"
+      ],
+      "env": {
+        "UNITY_ACP_SESSION_TOKEN": "87fd93204d46416141de335fda3176f4b836da3db00b6963ec4d18cc2dbbd3c2",
+        "UNITY_INSTANCE_ID": "28048"
+      }
+    }
+  }
+}
