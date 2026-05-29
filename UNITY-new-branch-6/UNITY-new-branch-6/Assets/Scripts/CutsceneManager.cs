@@ -16,6 +16,11 @@ public class CutsceneManager : MonoBehaviour
     public float typingSpeed = 0.05f;
 
     [Header("Content")]
+    public Sprite cutScene1;
+    public Sprite cutScene2;
+    public Sprite cutScene3;
+    public Sprite cutScene4;
+    public Sprite cutScene5;
     public Sprite forestIntroSprite;
     public Sprite cityIntroSprite;
     public Sprite labIntroSprite;
@@ -50,9 +55,33 @@ public class CutsceneManager : MonoBehaviour
         switch (GameFlowManager.Instance.currentState)
         {
             case GameFlowManager.GameState.Cutscene:
-                dialogueLines.Add("The world was once peaceful, but then the corruption arrived.");
-                dialogueLines.Add("I must venture into the forest to find the source.");
-                if (forestIntroSprite != null) cutsceneImage.sprite = forestIntroSprite;
+                if (currentLineIndex == 0)
+                {
+                    cutsceneImage.sprite = cutScene1;
+                }
+                dialogueLines.Add("NARRATOR: After months of dead ends and late nights in the lab, the project was finally coming together.");
+                dialogueLines.Add("NARRATOR: The lead scientists had just finalized their initial tests on a recently discovered organism.");
+                dialogueLines.Add("SCIENTIST: Finally, they're done for the night. I just need to finish logging these baseline stability readings.");
+                dialogueLines.Add("SCIENTIST: After all this overtime, I can finally head home early tomorrow");
+                dialogueLines.Add("NARRATOR: Right behind him, the main viral specimen sat sealed inside its automated containment tank.");
+
+                dialogueLines.Add("NARRATOR: It was a highly hazardous asset, kept under strict security protocols.");
+                dialogueLines.Add("SCIENTIST: I should double-check the tank's containment pressure before I log out for the night.");
+                dialogueLines.Add("SCIENTIST: That specimen has been fluctuating all week, and I don't want any surprises overnight.");
+
+                dialogueLines.Add("NARRATOR: Without warning, a massive power spike overloaded the facility's grid, triggering a critical error.");
+                dialogueLines.Add("NARRATOR: Emergency alarms cut through the building as the automated security gates locked down.");
+
+                dialogueLines.Add("SCIENTIST: Wait... the containment seals are dropping. The door is locked, let me out!");
+                dialogueLines.Add("NARRATOR: The over pressurized glass capsule shattered, instantly flooding the room with toxic airborne particles.");
+                dialogueLines.Add("NARRATOR: The scientist collapsed into the chemical spill.");
+                dialogueLines.Add("SCIENTIST: Agh! The tank blew...");
+                dialogueLines.Add("SCIENTIST: No... it’s airborne... I can't breathe...");
+
+                dialogueLines.Add("SCIENTIST: The virus didn't kill me—it remade me.");
+                dialogueLines.Add("SCIENTIST: Now, I have to fight my way out before the infection takes completely.");
+
+
                 break;
             case GameFlowManager.GameState.Dialog:
                 dialogueLines.Add("The experiments... they were trying to harness the corruption.");
@@ -83,7 +112,9 @@ public class CutsceneManager : MonoBehaviour
         else
         {
             // Move to next line or end cutscene
+            ChangeBackground();
             currentLineIndex++;
+            
             if (currentLineIndex < dialogueLines.Count)
             {
                 StartCoroutine(TypeText(dialogueLines[currentLineIndex]));
@@ -92,6 +123,33 @@ public class CutsceneManager : MonoBehaviour
             {
                 EndCutscene();
             }
+        }
+    }
+
+    void ChangeBackground()
+    {
+        // Change image depending on dialogue index
+
+        if (currentLineIndex == 0)
+        {
+            cutsceneImage.sprite = cutScene1;
+        }
+
+        if (currentLineIndex == 4)
+        {
+            cutsceneImage.sprite = cutScene2;
+        }
+        if (currentLineIndex == 7)
+        {
+            cutsceneImage.sprite = cutScene3;
+        }
+        if (currentLineIndex == 9)
+        {
+            cutsceneImage.sprite = cutScene4;
+        }
+        if (currentLineIndex == 14)
+        {
+            cutsceneImage.sprite = cutScene5;
         }
     }
 

@@ -41,10 +41,12 @@ public class EnemyHealth : MonoBehaviour
 
         // Damage Flash
         SpriteRenderer sr = GetComponent<SpriteRenderer>();
+
         if (sr == null) sr = GetComponentInChildren<SpriteRenderer>();
         if (sr != null)
         {
             StartCoroutine(DamageFlash(sr));
+         
         }
 
         Animator animator = GetComponent<Animator>();
@@ -56,22 +58,53 @@ public class EnemyHealth : MonoBehaviour
         if (currentHealth <= 0)
         {
             if (soundManager != null)
-                soundManager.PlaySFX(soundManager.growl);
-            Die();
+
+                if (!gameObject.name.ToLower().Contains("owl"))
+                {
+                    soundManager.PlaySFX(soundManager.growl);
+                }else
+                {
+                    soundManager.PlaySFX(soundManager.owlDeath);
+                }
+                    Die();
         }
     }
 
     private IEnumerator DamageFlash(SpriteRenderer sr)
     {
-        Color originalColor = sr.color;
-        sr.color = Color.red;
-        yield return new WaitForSeconds(0.2f);
-        sr.color = originalColor;
+        if(gameObject.name != "Soldier")
+        {
+            Color originalColor = sr.color;
+            sr.color = Color.red;
+            yield return new WaitForSeconds(0.2f);
+            sr.color = originalColor;
+        }
+        else
+        {
+            Color originalColor = Color.white;
+            sr.color = Color.red;
+            yield return new WaitForSeconds(0.2f);
+            sr.color = originalColor;
+        }
     }
 
     private void Die()
     {
         Debug.Log($"{gameObject.name} defeated.");
+
+        if (gameObject.name.ToLower().Contains("owl"))
+        {
+            SpriteRenderer[] renderers = GetComponentsInChildren<SpriteRenderer>();
+            
+
+            foreach (SpriteRenderer sr in renderers)
+            {
+                sr.color = Color.black;
+                StartCoroutine(DeadOwl());
+            }
+        }
+
+        
 
         InitialSoldierStageTransition initialStageTransition = GetComponent<InitialSoldierStageTransition>();
         // Automatic transition is disabled; player must interact with the door to transition.
@@ -94,6 +127,7 @@ public class EnemyHealth : MonoBehaviour
             rb.linearVelocity = Vector2.zero;
             rb.gravityScale = 0;
             rb.bodyType = RigidbodyType2D.Kinematic;
+            
         }
 
         Animator animator = GetComponent<Animator>();
@@ -125,6 +159,12 @@ public class EnemyHealth : MonoBehaviour
             else
                 Destroy(gameObject);
         }
+    }
+
+    private IEnumerator DeadOwl()
+    { 
+        yield return new WaitForSeconds(0.5f);
+        Destroy(gameObject);
     }
 
     private bool ShouldUseLaboratorySoldierFallback()

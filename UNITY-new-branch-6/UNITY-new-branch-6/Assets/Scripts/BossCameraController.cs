@@ -11,6 +11,8 @@ public class BossCameraController : MonoBehaviour
     public GameObject arenaWalls;
     public bool bossStageUnlockedOnStart = false;
 
+    public Transform bossSpawnPoint;
+
     private bool bossStageUnlocked;
 
     private void Awake()
@@ -80,6 +82,9 @@ public class BossCameraController : MonoBehaviour
     public void UnlockBossStageAndEnter()
     {
         UnlockBossStage();
+
+        
+
         EnterBossMode();
     }
 

@@ -565,12 +565,12 @@ MonoBehaviour:
   creditsText: {fileID: 408164997}
   scrollSpeed: 50
   textRect: {fileID: 408164995}
-  gameTitle: Game Title Placeholder
-  developers: Developer 1, Developer 2
-  artists: Artist 1, Artist 2
-  animators: Animator 1
-  soundEngineer: Sound Engineer 1
-  programmers: Programmer 1, Programmer 2
+  gameTitle: BioBlade
+  developers: Layao, De Leon
+  artists: Cervo, Cruz, Dela Torre
+  animators: Cervo
+  soundEngineer: Layao, De Leon
+  programmers: Layao, De Leon
 --- !u!114 &2139809835
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -1123,7 +1123,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 8, y: -179.22}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &86944466
@@ -2923,6 +2923,7 @@ MonoBehaviour:
   bearAttack: {fileID: 8300000, guid: bc897df0e93c3164eb9aea3ca0f27e36, type: 3}
   owlHover: {fileID: 8300000, guid: d68297e8c4338fa49918fbc83106b1d0, type: 3}
   owlAttack: {fileID: 8300000, guid: 7b766f25b6528d747b55d02c7636582d, type: 3}
+  owlDeath: {fileID: 8300000, guid: b71d3e7a3df88ed49b2c3b6b82b81c5b, type: 3}
 --- !u!4 &208750344
 Transform:
   m_ObjectHideFlags: 0
@@ -7732,6 +7733,8 @@ MonoBehaviour:
   player: {fileID: 141111537}
   offsetX: 0
   offsetY: 1.2
+  groundReference: {fileID: 0}
+  groundReferenceName: LongWhiteGround
 --- !u!4 &564056842
 Transform:
   m_ObjectHideFlags: 0

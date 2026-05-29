@@ -42,6 +42,12 @@ public class PlayerHealth : MonoBehaviour
     private PlayerHeartsUI heartsUI;
     private int healthBeforeDamage;
 
+    [Header("Regen Settings")]
+    public float regenDelay = 3f;      // time after damage before regen starts
+    public float regenRate = 1f;       // HP per second
+    private float lastDamageTime;
+    private Coroutine regenCoroutine;
+
     void Awake()
     {
         soundManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<SoundManager>();
@@ -82,6 +88,13 @@ public class PlayerHealth : MonoBehaviour
     {
         if (isInvincible || isDead) return;
 
+        lastDamageTime = Time.time;
+
+        if (regenCoroutine != null)
+        {
+            StopCoroutine(regenCoroutine);
+        }
+
         if (playerCombat != null && playerCombat.IsBlocking)
         {
             Debug.Log("Player blocked " + damage + " damage!");
@@ -120,6 +133,32 @@ public class PlayerHealth : MonoBehaviour
         PlayDamageAnimation();
 
         StartCoroutine(InvincibilityRoutine());
+        regenCoroutine = StartCoroutine(RegenRoutine());
+    }
+
+    IEnumerator RegenRoutine()
+    {
+        // Wait before starting regen
+        yield return new WaitForSeconds(regenDelay);
+
+        while (currentHealth < maxHealth && !isDead)
+        {
+            // stop regen if player recently took damage
+            if (Time.time - lastDamageTime < regenDelay)
+                yield break;
+
+            currentHealth += Mathf.CeilToInt(regenRate * Time.deltaTime);
+            currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
+
+            UpdateHealthBar();
+
+            if (heartsUI != null)
+            {
+                heartsUI.RefreshStaticDisplay(currentHealth, heartsCount);
+            }
+
+            yield return null;
+        }
     }
 
     void PlayDamageAnimation()

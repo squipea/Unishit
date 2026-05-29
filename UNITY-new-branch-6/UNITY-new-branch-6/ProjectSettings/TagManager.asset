@@ -9,6 +9,7 @@ TagManager:
   - BossWeakPoint
   - BossTrigger
   - Audio
+  - owl
   layers:
   - Default
   - TransparentFX

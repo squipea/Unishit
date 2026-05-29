@@ -580,7 +580,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.0015869141, y: -0.00048828}
+  m_AnchoredPosition: {x: 0.0015869141, y: -0.00048828125}
   m_SizeDelta: {x: 7296, y: 4104}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1034326590
@@ -1057,8 +1057,13 @@ MonoBehaviour:
   dialogueBox: {fileID: 857572765}
   dialogueUI: {fileID: 1903006983}
   typingSpeed: 0.05
-  forestIntroSprite: {fileID: -816926746685310277, guid: ca4c266785ad7de4ea5ee2efc740ac1f, type: 3}
-  cityIntroSprite: {fileID: -266441449713999729, guid: e5c5c48bd299fef4d8dcd78a6e89eceb, type: 3}
+  cutScene1: {fileID: -6525251533827417197, guid: 199018c224bfe2445a2b5c1148ddf122, type: 3}
+  cutScene2: {fileID: -154269249030348198, guid: 625775be383d8fe4ab519ac2cebac773, type: 3}
+  cutScene3: {fileID: -7465307106225235979, guid: c1670b52ad3703340b8e48ab988a691d, type: 3}
+  cutScene4: {fileID: -7083523246791027351, guid: a787bcc8e7eddde42858be03fa7f7139, type: 3}
+  cutScene5: {fileID: -6047493898223882553, guid: 17e424f309584164b8a9650f7a9df172, type: 3}
+  forestIntroSprite: {fileID: -6525251533827417197, guid: 199018c224bfe2445a2b5c1148ddf122, type: 3}
+  cityIntroSprite: {fileID: -154269249030348198, guid: 625775be383d8fe4ab519ac2cebac773, type: 3}
   labIntroSprite: {fileID: 0}
   endingSprite: {fileID: 0}
 --- !u!4 &1903006982

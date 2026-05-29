@@ -824,6 +824,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: OwlEnemy (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 5731778126120334604, guid: b33669fbe91aa944ba8d81b99a72d281, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     - target: {fileID: 6907205370488568629, guid: b33669fbe91aa944ba8d81b99a72d281, type: 3}
       propertyPath: detectionRange
       value: 10
@@ -988,7 +992,7 @@ MonoBehaviour:
   musicSource: {fileID: 1654957710}
   sfxSource: {fileID: 298473617}
   runSource: {fileID: 175910116}
-  background: {fileID: 0}
+  background: {fileID: 8300000, guid: b630a2fe65c890646a9e6729b9118e35, type: 3}
   attack1: {fileID: 8300000, guid: 9f3ce2f2fb0caa649b9cd215fafad891, type: 3}
   attack2: {fileID: 8300000, guid: def05134cb6e3c94a913c0e7255c1a68, type: 3}
   attack3: {fileID: 8300000, guid: de192103008ab2640922240c53dd2f89, type: 3}
@@ -1001,6 +1005,7 @@ MonoBehaviour:
   bearAttack: {fileID: 8300000, guid: bc897df0e93c3164eb9aea3ca0f27e36, type: 3}
   owlHover: {fileID: 8300000, guid: d68297e8c4338fa49918fbc83106b1d0, type: 3}
   owlAttack: {fileID: 8300000, guid: 7b766f25b6528d747b55d02c7636582d, type: 3}
+  owlDeath: {fileID: 8300000, guid: b71d3e7a3df88ed49b2c3b6b82b81c5b, type: 3}
 --- !u!4 &61387171
 Transform:
   m_ObjectHideFlags: 0
@@ -1543,6 +1548,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: OwlEnemy (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 5731778126120334604, guid: b33669fbe91aa944ba8d81b99a72d281, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     - target: {fileID: 6907205370488568629, guid: b33669fbe91aa944ba8d81b99a72d281, type: 3}
       propertyPath: detectionRange
       value: 10
@@ -1760,6 +1769,10 @@ PrefabInstance:
     - target: {fileID: 5731778126120334604, guid: b33669fbe91aa944ba8d81b99a72d281, type: 3}
       propertyPath: m_Name
       value: OwlEnemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 5731778126120334604, guid: b33669fbe91aa944ba8d81b99a72d281, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 6907205370488568629, guid: b33669fbe91aa944ba8d81b99a72d281, type: 3}
       propertyPath: detectionRange
@@ -35315,6 +35328,8 @@ MonoBehaviour:
   player: {fileID: 596171889}
   offsetX: 0
   offsetY: 1.2
+  groundReference: {fileID: 0}
+  groundReferenceName: LongWhiteGround
 --- !u!4 &1389570323
 Transform:
   m_ObjectHideFlags: 0
@@ -38354,7 +38369,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 0}
+  m_Resource: {fileID: 8300000, guid: b630a2fe65c890646a9e6729b9118e35, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -41771,6 +41786,10 @@ PrefabInstance:
     - target: {fileID: 5731778126120334604, guid: b33669fbe91aa944ba8d81b99a72d281, type: 3}
       propertyPath: m_Name
       value: OwlEnemy (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5731778126120334604, guid: b33669fbe91aa944ba8d81b99a72d281, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 6907205370488568629, guid: b33669fbe91aa944ba8d81b99a72d281, type: 3}
       propertyPath: detectionRange

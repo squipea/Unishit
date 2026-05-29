@@ -25,6 +25,7 @@ public class SoundManager : MonoBehaviour
     [Header("Owl Clips")]
     public AudioClip owlHover;
     public AudioClip owlAttack;
+    public AudioClip owlDeath;
 
 
     public void PlayMusic()
